@@ -1,22 +1,34 @@
-import type { Metadata } from 'next';
-import Navbar from '@/components/layout/Navbar';
+import type { Metadata, Viewport } from 'next';
 import './globals.css';
+import Navbar from '@/components/layout/Navbar';
+import HideChromeBar from '@/components/HideChromeBar';
 
 export const metadata: Metadata = {
-  title: 'Hajj & Umrah Enterprise Booking Platform',
-  description: 'Dynamic live price calculation and package customizer.',
+  title: 'Hajj Umrah Portal',
+  manifest: '/manifest.json',
+  appleWebApp: {
+    capable: true,
+    statusBarStyle: 'black-translucent',
+    title: 'HajjPortal',
+  },
 };
 
-export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
+export const viewport: Viewport = {
+  width: 'device-width',
+  initialScale: 1,
+  maximumScale: 1,
+  userScalable: false,
+  viewportFit: 'cover',
+  themeColor: '#022c22',
+};
+
+export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">
-      <body className="bg-slate-50 text-slate-900 antialiased font-sans">
+      <body className="bg-emerald-950">
+        <HideChromeBar />
         <Navbar />
-        <main>{children}</main>
+        <main className="pb-16 md:pb-0">{children}</main>
       </body>
     </html>
   );
