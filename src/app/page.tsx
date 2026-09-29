@@ -17,10 +17,14 @@ import {
   FileText,
   HeartHandshake
 } from 'lucide-react';
+import AboutUs from '@/components/AboutUs';
+import HeroSection from '@/components/HeroSection';
 
 export default function HomePage() {
   return (
     <div className="min-h-screen bg-slate-50 text-slate-800">
+
+      <HeroSection />
 
       {/* 1. HERO SECTION */}
       <section className="relative bg-emerald-950 text-white overflow-hidden py-16 sm:py-24 border-b border-emerald-800">
@@ -78,7 +82,7 @@ export default function HomePage() {
                 </div>
               </div>
             </div>
-
+        
             {/* Right Column: Hero Calculator Quick Teaser */}
             <div className="lg:col-span-5 bg-white text-slate-900 p-6 sm:p-8 rounded-3xl shadow-2xl border border-slate-100 space-y-5">
               <div className="flex items-center justify-between border-b border-slate-100 pb-3">
@@ -116,7 +120,7 @@ export default function HomePage() {
                   </select>
                 </div>
               </div>
-
+              
               <div className="p-4 bg-emerald-50 rounded-2xl border border-emerald-100 flex items-center justify-between">
                 <div>
                   <span className="text-[10px] text-slate-500 uppercase font-bold block">Estimated Starting From</span>
@@ -134,6 +138,8 @@ export default function HomePage() {
           </div>
         </div>
       </section>
+
+      <AboutUs />
 
       {/* 2. WHY CHOOSE US (KEY FEATURES) */}
       <section className="py-16 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto space-y-12">
